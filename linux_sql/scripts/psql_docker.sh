@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#A Script to Start/Stop the PSQL Container
+#A Script to Create, Start and Stop the PSQL Container
 
 #Check docker status, start if not alreday running
 systemctl status docker || systemctl start docker
