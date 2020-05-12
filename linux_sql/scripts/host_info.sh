@@ -9,6 +9,32 @@ db_name=$3
 psql_user=$4
 psql_pass=$5
 
+#Error Handling
+if [ "$1" == "" ]; then
+   echo "Please Specify the Hostname!" 1>&2
+   exit 1
+fi
+
+if [ "$2" == "" ]; then
+   echo "Please Specify the Port Address!" 1>&2
+   exit 1
+fi
+
+if [ "$3" == "" ]; then
+   echo "Please Specify the Name of the Database!" 1>&2
+   exit 1
+fi
+
+if [ "$4" == "" ]; then
+   echo "Please Input a Username!" 1>&2
+   exit 1
+fi 
+
+if [ "$5" == "" ]; then
+   echo "Please Input a Password!" 1>&2
+   exit 1
+fi
+
 #Assign hardware spec into variables
 lscpu_out=$(lscpu)
 hostname=$(hostname -f)
@@ -37,3 +63,4 @@ VALUES
 
 psql -h $psql_host -p $psql_port -U $psql_user -d $db_name -W -c "$insert_stmt"
 
+exit 0
