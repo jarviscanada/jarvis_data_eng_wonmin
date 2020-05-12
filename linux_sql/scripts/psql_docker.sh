@@ -1,6 +1,6 @@
 #! /bin/bash
 
-#A Script to Create, Start and Stop the PSQL Container
+#Script to Create, Start and Stop the PSQL Container
 
 #Check docker status, start if not alreday running
 systemctl status docker || systemctl start docker
@@ -51,5 +51,3 @@ if [ "$1" != "create" ] && [ "$1" != "start" ] && [ "$1" != "stop" ]; then
    echo "Invalid command! Please use 'create', 'start' or 'stop'" 1>&2
    exit 1
 fi
-
-
