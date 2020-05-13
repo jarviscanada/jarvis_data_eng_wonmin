@@ -44,13 +44,12 @@ cpu_model=$(echo "$lscpu_out"  | egrep "^Model name:" | awk '{print $3,$4,$5,$6,
 cpu_mhz=$(echo "$lscpu_out"  | egrep "^CPU MHz:" | awk '{print $3}' | xargs)
 l2_cache=$(echo "$lscpu_out"  | egrep "^L2 cache:" | awk '{print $3}'| sed 's/K//' | xargs)
 total_mem=$(echo "$lscpu_out"  | egrep "^L3 cache:" | awk '{print $3}' | sed 's/K//' | xargs)
-timestamp=$(date "+%F %T")
+timestamp=$(date -u "+%F %T")
 
 #Define insert statement
-insert_stmt="INSERT INTO host_info (id,hostname,cpu_number,cpu_architecture,cpu_model,cpu_mhz,L2_cache,total_mem,timestamp) 
+insert_stmt="INSERT INTO host_info (hostname,cpu_number,cpu_architecture,cpu_model,cpu_mhz,L2_cache,total_mem,timestamp) 
 VALUES 
  (
-   '1',
    '$hostname',
    '$cpu_number',
    '$cpu_architecture',
@@ -61,6 +60,6 @@ VALUES
    '$timestamp'
  )"
 
-psql -h $psql_host -p $psql_port -U $psql_user -d $db_name -W -c "$insert_stmt"
+psql -h $psql_host -p $psql_port -U $psql_user -d $db_name -c "$insert_stmt"
 
 exit 0
