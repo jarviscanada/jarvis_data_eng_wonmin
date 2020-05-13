@@ -50,7 +50,7 @@ insert_stmt="INSERT INTO host_usage (timestamp,host_id,memory_free,cpu_idle,cpu_
 VALUES 
  (
    '$timestamp',
-   (SELECT id FROM host_info),
+   (SELECT LAST_VALUE FROM host_info_id_seq),
    '$memory_free',
    '$cpu_idle',
    '$cpu_kernel',
