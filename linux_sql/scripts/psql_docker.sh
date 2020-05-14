@@ -47,7 +47,7 @@ if [ "$1" == "stop" ]; then
 fi
 
 #Check invalid manipulation command
-if [ "$1" != "create" ] && [ "$1" != "start" ] && [ "$1" != "stop" ]; then
+if [ "$1" != "create" ] || [ "$1" != "start" ] || [ "$1" != "stop" ]; then
    echo "Invalid command! Please use 'create', 'start' or 'stop'" 1>&2
    exit 1
 fi
