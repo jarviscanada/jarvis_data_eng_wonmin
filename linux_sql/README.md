@@ -33,7 +33,7 @@ Within the database `host_agent`, there are two tables: `host_info` and `host_us
 * `disk_available`: Amount of disk space available in root directory
 
 ### Scripts Explanation
-* [a relative link](host_info.sh) is run on every cluster within the network connection to gather the hardware specification of each machine. It is executed only once with the assumption that the host machine's specifications do not change.
+* [`host_info.sh`](jarvis_data_eng_wonmin/linux_sql/scripts/host_info.sh) is run on every cluster within the network connection to gather the hardware specification of each machine. It is executed only once with the assumption that the host machine's specifications do not change.
 * [a relative link](host_usage.sh) is run on every cluster within the network connection to gather the resource usage of each machine. It is executed every minute and stores consecutive data into the database.
 * [a relative link](psql_docker.sh) is run to create, start and stop the PostgreSQL instance using docker. Note that the script does not support deletion of docker containers or volumes.
 * [a reltive link](ddl.sql) is a SQL script to create the two tables mentioned above: `host_info` and `host_usage`. If the tables already exist, the script will exit with an error.
