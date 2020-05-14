@@ -105,4 +105,10 @@ crontab -ls
 # Verify by opening performance log
 cat /tmp/host_usage.log
 ```
+## Possible Improvements
+1. In order to facilitate the automation of `host_usage.sh` a PGPASS file had to be created in order bypass the password check. Further research in networking and encryption will allow the developer to control the encryption in each connected clusters and allow easier accessibility to each host machine.
+
+2. Currently, the `host_info.sh` script runs only once at the start under the assumption that the host's hardware specs do not change. In order to accomodate for possible system upgrades, we can run the script in long intervals and compare the result with the previously stored data, overwritting when necessary.
+
+3. A final suggestion for improvement would be to try and automate the entire process, without the need of CML interaction (only when prompted with parameters). For intance, perhaps a separate bash script can be created in which all the separate bash scripts are run. The "enveloped" bash script will acquire all user parameters required to run each script (i.e. `psql_host`, `psql_port`, etc.) and execute them in order.
 
