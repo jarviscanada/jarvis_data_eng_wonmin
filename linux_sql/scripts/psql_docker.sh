@@ -45,9 +45,3 @@ if [ "$1" == "stop" ]; then
    docker container stop jrvs-psql
    exit 0
 fi
-
-#Check invalid manipulation command
-if [ "$1" != "create" ] || [ "$1" != "start" ] || [ "$1" != "stop" ]; then
-   echo "Invalid command! Please use 'create', 'start' or 'stop'" 1>&2
-   exit 1
-fi
