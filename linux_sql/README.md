@@ -38,3 +38,61 @@ Within the database `host_agent`, there are two tables: `host_info` and `host_us
 * [`psql_docker.sh`](scripts/psql_docker.sh) is run to create, start and stop the PostgreSQL instance using docker. Note that the script does not support deletion of docker containers or volumes.
 * [`ddl.sql`](sql/ddl.sql) is a SQL script to create the two tables mentioned above: `host_info` and `host_usage`. If the tables already exist, the script will exit with an error.
 * [`queries.sql`](sql/queries.sql) contains two SQL queries to assist in database management and information processing. The first query groups hosts by the number of CPUs in their machine and sorts their memory size in descending order. The second query averages the amount of used memory (in percentage) over 5 minute intervals for each host.
+
+## Script Usage
+
+1. Initializing the PostgreSQL instance
+   To start off, we have to initialize the PostgreSQL container with docker, andstart the container.
+```bash
+# Create PSQL docker container from the machines home directory
+./linux_sql/scripts/psql_docker.sh create psql_user psql_ password
+
+# Start the container
+./linux_sql/scripts/psql_docker.sh start psql_user psql_password
+```
+
+2. Create the database `host_agent` and create two tables `host_info` and `host_usage`
+   We first need to connect to PSQL instance, then create the database using SQL commands. Then, we can run the aforementioned script to create the tables.
+```bash
+# Connect to PSQL
+psql -h psql_host -U psql_user -W
+```
+```SQL
+# Create the database
+CREATE DATABASE host_agent;
+```
+```bash
+# Create the tables
+psql -h psql_host -U psql_user -d db_name -f ./linux_sql/sql/ddl.sql
+```
+
+3. Run `host_info.sh`
+   As previously mentioned, the script stores the host's system specification into the `host_info` table.
+```bash
+# Stores host machine specs into PSQL database
+./linux_sql/scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
+```
+
+4. Run `host_usage.sh`
+   The script stores the host's current resource usage into the `host_usage` table.
+```bash
+# Stores host machine resource usage into PSQL database
+./linux_sql/scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
+
+```
+
+5. Setup crontab
+   crontab automates the execution of `host_usage.sh` so that the information is collected every minute. 
+```bash
+# Edit crontab jobs
+crontab -e
+
+# Enter the following line into the opened file
+* * * * * bash [path]/host_usage.sh psql_host psql_port db_name psql_user psql_password &> /tmp/host_usage.log
+
+# List current crontab jobs
+crontab -ls
+
+# Verify by opening performance log
+cat /tmp/host_usage.log
+```
