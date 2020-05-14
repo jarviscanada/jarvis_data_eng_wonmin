@@ -42,7 +42,9 @@ Within the database `host_agent`, there are two tables: `host_info` and `host_us
 ## Script Usage
 
 1. Initializing the PostgreSQL instance
-   To start off, we have to initialize the PostgreSQL container with docker, andstart the container.
+ 
+ To start off, we have to initialize the PostgreSQL container with docker, andstart the container.
+
 ```bash
 # Create PSQL docker container from the machines home directory
 ./linux_sql/scripts/psql_docker.sh create psql_user psql_ password
@@ -52,7 +54,9 @@ Within the database `host_agent`, there are two tables: `host_info` and `host_us
 ```
 
 2. Create the database `host_agent` and create two tables `host_info` and `host_usage`
-   We first need to connect to PSQL instance, then create the database using SQL commands. Then, we can run the aforementioned script to create the tables.
+ 
+ We first need to connect to PSQL instance, then create the database using SQL commands. Then, we can run the aforementioned script to create the tables.
+
 ```bash
 # Connect to PSQL
 psql -h psql_host -U psql_user -W
@@ -67,22 +71,25 @@ psql -h psql_host -U psql_user -d db_name -f ./linux_sql/sql/ddl.sql
 ```
 
 3. Run `host_info.sh`
-   As previously mentioned, the script stores the host's system specification into the `host_info` table.
+
+ As previously mentioned, the script stores the host's system specification into the `host_info` table.
+
 ```bash
 # Stores host machine specs into PSQL database
 ./linux_sql/scripts/host_info.sh psql_host psql_port db_name psql_user psql_password
 ```
 
 4. Run `host_usage.sh`
-   The script stores the host's current resource usage into the `host_usage` table.
+ The script stores the host's current resource usage into the `host_usage` table.
+
 ```bash
 # Stores host machine resource usage into PSQL database
 ./linux_sql/scripts/host_usage.sh psql_host psql_port db_name psql_user psql_password
-
 ```
 
 5. Setup crontab
-   crontab automates the execution of `host_usage.sh` so that the information is collected every minute. 
+ crontab automates the execution of `host_usage.sh` so that the information is collected every minute. 
+
 ```bash
 # Edit crontab jobs
 crontab -e
@@ -96,3 +103,4 @@ crontab -ls
 # Verify by opening performance log
 cat /tmp/host_usage.log
 ```
+
