@@ -1,4 +1,5 @@
-#Linux Cluster Monitoring Agaent
+#Linux Cluster Monitoring Agent
+
 ##Introduction
 The Linux Cluster Monitoring Agent records the hardware specifications of each host machine and monitors their memory usage in real time. The machines are connected under a common network via a network swtich. The data is then stored in a RDBMS database for easy accessibility and maintenance. This in turn allows any team that administrates Linux Clusters to generate reports for future resource planning and tight optimization. The program was implemented using both bash scripts and the PostgreSQL database, while also containing some SQL queries in order to answer possible questions. Utilizing Docker, the end product is lightweight, versatile and easy to use.
 
