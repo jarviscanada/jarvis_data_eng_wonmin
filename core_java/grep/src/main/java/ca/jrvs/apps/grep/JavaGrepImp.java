@@ -42,12 +42,12 @@ public class JavaGrepImp implements JavaGrep{
             writeToFile(matchedLines);
         }
         catch (IOException ex) {
-            throw new IOException("Invalid Input/Output", ex);
+            throw new IOException("Invalid I/O", ex);
         }
     }
 
     @Override
-    public List<File> listFile(String rootDir) {
+    public List<File> listFile(String rootDir) throws IOException{
 
         List<File> fileList = new ArrayList<>();
         File[] files = new File(rootDir).listFiles();
@@ -73,7 +73,7 @@ public class JavaGrepImp implements JavaGrep{
             }
         }
         catch (IllegalArgumentException | IOException ex) {
-            throw new IllegalArgumentException("Invalid Argument / IO", ex);
+            throw new IllegalArgumentException("Invalid Argument!", ex);
         }
         return lines;
     }
@@ -95,7 +95,7 @@ public class JavaGrepImp implements JavaGrep{
             }
         }
         catch (IOException ex) {
-            throw new IOException("Invalid Input/Output");
+            throw new IOException("Invalid I/O!");
         }
     }
 
