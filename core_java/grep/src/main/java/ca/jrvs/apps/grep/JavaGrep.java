@@ -17,7 +17,7 @@ public interface JavaGrep{
      * @param rootDir input directory
      * @return files under the rootDir
      */
-    List<File> listFile(String rootDir);
+    List<File> listFile(String rootDir) throws IOException;
 
     /**
      * Read a file and return all lines
@@ -34,6 +34,7 @@ public interface JavaGrep{
      * Check if a line contains the Regex pattern (Passed by the user)
      * @param line input string
      * @return true if there is a match
+     * @throws IllegalArgumentException if the input is not a valid file
      */
     boolean containsPattern(String line);
 
