@@ -1,11 +1,11 @@
-#JavaGrep
+# JavaGrep
 
-##Introduction
+## Introduction
 The JavaGrep app implements a simple `grep` function within Java. The app searches for a text pattern recursively
 in a given directory. Through the project, the developer familiarized themselves with the usage of 
 Java Input and Output methods, Stream APIs and Lambda, and String pattern searching using Java Regex.
 
-##Usage
+## Usage
 The app takes in three arguments: `regex`, `rootPath`, and `outFile`.
 * `regex`: A special text string for describing a search pattern
 * `rootPath`: Root directory path 
@@ -15,7 +15,7 @@ When the three arguments are passed to the app, the program searches within all 
 `rootPath`(Directory and Subdirectory) and those of which contain the specified `regex` pattern. Then,
 the program writes the contents of the files into `outFile`.
 
-####Simple Example
+#### Simple Example
 When the parameters 
 ```bash
 .*IllegalArgumentException.* ./grep/src /tmp/grep.out"
@@ -35,7 +35,7 @@ are passed to the program, it outputs the following text file
             throw new IllegalArgumentException("Invalid Argument!", ex);
 ```
 
-##Pseudocode
+## Pseudocode
 The following is a pseudocode for the method `process`
 ```bash
 matchedLines = matchedLineArray
@@ -46,11 +46,11 @@ for file in listFilesRecursively(rootDir)
 writeToFile(matchedLines)
 ```
 
-##Performance Issue
+## Performance Issue
 The program will not work on large files as the methods read the entire file into memory before copying it to the list. This process will be extremely time-consuming when the file is large in size. 
 A possible solution is to use the Stream API and lambda, but it will be a somewhat mediocre solution.
 
-##Possible Improvements
+## Possible Improvements
 1. Solve the memory issue of the JavaGrep app
 
 2. Easier accessibility by allowing the user to specify the three parameters at runtime
