@@ -37,6 +37,6 @@ public class JSONParser {
      */
     public static <T> T toObjectFromJson(String json, Class clazz) throws IOException {
         ObjectMapper m = new ObjectMapper();
-        return (T) m.readValue(json,clazz);
+        return (T) m.readValue(json, clazz);
     }
 }

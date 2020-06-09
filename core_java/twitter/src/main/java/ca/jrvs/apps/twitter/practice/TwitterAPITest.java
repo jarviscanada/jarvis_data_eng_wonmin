@@ -26,7 +26,7 @@ public class TwitterAPITest {
         consumer.setTokenWithSecret(ACCESS_TOKEN, TOKEN_SECRET);
 
         //Create HTTP Get Request
-        String status = "Today is a good day!";
+        String status = "Test1";
         PercentEscaper percentEscaper = new PercentEscaper("", false);
         HttpPost request = new HttpPost("https://api.twitter.com/1.1/statuses/update.json?status=" + percentEscaper.escape(status));
 
