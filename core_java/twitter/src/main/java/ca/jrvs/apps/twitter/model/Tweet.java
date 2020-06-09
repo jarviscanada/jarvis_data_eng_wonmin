@@ -59,15 +59,11 @@ public class Tweet {
 
     public Tweet () { }
 
-    public Tweet (String text, double longitude, double latitude) {
+    public Tweet (String text, float longitude, float latitude) {
         this.text = text;
         Coordinates coord = new Coordinates();
-        List myCoordinates = new ArrayList();
-        myCoordinates.add(longitude);
-        myCoordinates.add(latitude);
-        coord.setCoordinates(myCoordinates);
-        //coord.setLongitude(longitude);
-        //coord.setLatitude(latitude);
+        float[] myCoords = {longitude, latitude};
+        coord.setCoordinates(myCoords);
         coord.setType("Point");
         this.coordinates = coord;
     }

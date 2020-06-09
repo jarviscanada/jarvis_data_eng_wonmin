@@ -33,8 +33,8 @@ public class TwitterDaoUnitTest {
     public void create() throws Exception {
         String hashTag = "#Test";
         String text = "Hello " + hashTag + " - " + System.currentTimeMillis();
-        double longitude = -75.1251;
-        double latitude = 12.1267;
+        float longitude = -75.1251F;
+        float latitude = 12.1267F;
 
         //Test failure path
         when(mockhelper.httpPost(isNotNull())).thenThrow(new RuntimeException("Mock"));

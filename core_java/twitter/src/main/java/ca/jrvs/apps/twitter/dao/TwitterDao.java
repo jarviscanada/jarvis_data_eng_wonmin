@@ -34,6 +34,7 @@ public class TwitterDao implements CrdDao<Tweet, String> {
     private static final String DELETE_PATH = "/1.1/statuses/destroy/";
     //URI Symbols
     private static final String QUERY_SYM = "?";
+    private static final String AMPERSAND = "&";
     private static final String EQUALS = "=";
     //Response Code
     private static final int HTTP_OK = 200;
@@ -49,7 +50,9 @@ public class TwitterDao implements CrdDao<Tweet, String> {
         try {
             PercentEscaper percentEscaper = new PercentEscaper("", false);
             String escapedStr = percentEscaper.escape(entity.getText());
-            URI postUri = new URI(API_BASE_URI + POST_PATH + QUERY_SYM + "status" + EQUALS + escapedStr);
+            URI postUri = new URI(API_BASE_URI + POST_PATH + QUERY_SYM + "status" + EQUALS + escapedStr
+                                + AMPERSAND + "lat" + EQUALS + entity.getCoordinates().getCoordinates()[0]
+                                + AMPERSAND + "long" + EQUALS + entity.getCoordinates().getCoordinates()[1]);
             HttpResponse httpResponse = httpHelper.httpPost(postUri);
             int status = httpResponse.getStatusLine().getStatusCode();
             if (status != HTTP_OK) {

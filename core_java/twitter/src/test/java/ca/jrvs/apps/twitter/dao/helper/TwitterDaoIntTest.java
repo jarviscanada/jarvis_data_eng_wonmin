@@ -31,8 +31,8 @@ public class TwitterDaoIntTest {
     public void create() throws Exception {
         String hashTag = "#Test";
         String text = "Hello " + hashTag + " - " + System.currentTimeMillis();
-        double longitude = -75.1251;
-        double latitude = 12.1267;
+        float longitude = -75.1251F;
+        float latitude = 12.1267F;
         Tweet postTweet = new Tweet(text,longitude,latitude);
         System.out.println(toJson(postTweet,true,true));
         Tweet tweet = dao.create(postTweet);
@@ -43,7 +43,7 @@ public class TwitterDaoIntTest {
         assertEquals(longitude, tweet.getCoordinates().getCoordinates().get(0));
         assertEquals(latitude, tweet.getCoordinates().getCoordinates().get(1));
 */  }
-
+/*
     @Test
     public void findById() throws Exception {
         Tweet tweet = dao.findById("1270034859562602496");
@@ -55,5 +55,5 @@ public class TwitterDaoIntTest {
         Tweet tweet = dao.deleteById("1270035258222747651");
         System.out.println(toJson(tweet,true,true));
     }
-
+*/
 }
