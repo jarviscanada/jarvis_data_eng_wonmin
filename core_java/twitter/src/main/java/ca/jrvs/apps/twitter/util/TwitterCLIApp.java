@@ -1,6 +1,5 @@
 package ca.jrvs.apps.twitter.util;
 
-
 import ca.jrvs.apps.twitter.controller.Controller;
 import ca.jrvs.apps.twitter.controller.TwitterController;
 import ca.jrvs.apps.twitter.dao.CrdDao;
@@ -13,6 +12,7 @@ import ca.jrvs.apps.twitter.service.TwitterService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import static ca.jrvs.apps.twitter.util.JSONParser.toJson;
 
 

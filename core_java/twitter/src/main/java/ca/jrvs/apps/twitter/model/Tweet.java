@@ -1,10 +1,8 @@
 package ca.jrvs.apps.twitter.model;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonIgnoreProperties({
     "truncated",

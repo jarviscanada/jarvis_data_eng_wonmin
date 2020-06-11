@@ -45,7 +45,7 @@ public class TwitterService implements Service {
         if (id.length() > idMAX) {
             throw new IllegalArgumentException("id length out of range!");
         }
-         /*Optional Field Parser - To be implemented later if time permits
+        /*Optional Field Parser - To be implemented later if time permits
         if (fields.length == 0) {
             return (Tweet) ca.jrvs.apps.twitter.dao.findById(id);
         }
