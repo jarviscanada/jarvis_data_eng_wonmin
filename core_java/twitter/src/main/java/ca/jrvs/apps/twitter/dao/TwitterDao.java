@@ -1,29 +1,22 @@
 package ca.jrvs.apps.twitter.dao;
 
 import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
-import ca.jrvs.apps.twitter.model.Coordinates;
-import ca.jrvs.apps.twitter.model.Entities;
 import ca.jrvs.apps.twitter.model.Tweet;
-import ca.jrvs.apps.twitter.practice.JSONParser;
-import com.fasterxml.jackson.annotation.JsonAlias;
 import com.google.gdata.util.common.base.PercentEscaper;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import javax.swing.text.html.parser.Entity;
+import org.springframework.stereotype.Repository;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import static ca.jrvs.apps.twitter.practice.JSONParser.toJson;
-import static ca.jrvs.apps.twitter.practice.JSONParser.toObjectFromJson;
+import static ca.jrvs.apps.twitter.util.JSONParser.toObjectFromJson;
 
+@Repository
 public class TwitterDao implements CrdDao<Tweet, String> {
     private Logger logger = LoggerFactory.getLogger(TwitterDao.class);
 
@@ -167,56 +160,4 @@ public class TwitterDao implements CrdDao<Tweet, String> {
         }
         return tweet;
     }
-
-/*
-    @Override
-    public Tweet create(Tweet tweet) {
-        URI postUri;
-        try {
-            PercentEscaper percentEscaper = new PercentEscaper("", false);
-            String escapedStr = percentEscaper.escape(tweet.getText());
-            postUri = new URI(API_BASE_URI + POST_PATH + QUERY_SYM + "status" + EQUALS + escapedStr);
-        }
-        catch (URISyntaxException e) {
-            throw new IllegalArgumentException("Invalid");
-        }
-        HttpResponse httpResponse = httpHelper.httpPost(postUri);
-        return parseResponseBody(httpResponse, HTTP_OK);
-    }
-    private Tweet parseResponseBody(HttpResponse httpResponse, Integer expectedStatusCode) {
-        Tweet tweet = null;
-        int status = httpResponse.getStatusLine().getStatusCode();
-
-        if (status != expectedStatusCode) {
-            try {
-                System.out.println(EntityUtils.toString(httpResponse.getEntity()));
-            } catch (IOException e) {
-                logger.error(e.getMessage(), e);
-            }
-            throw new RuntimeException("Unexpected HTTP Response!");
-        }
-
-        if (httpResponse.getEntity() == null) {
-            throw new RuntimeException("Empty Response Body");
-        }
-
-        String jsonstr;
-        try {
-            jsonstr = EntityUtils.toString(httpResponse.getEntity());
-        }
-        catch (IOException e) {
-            logger.error(e.getMessage(), e);
-            throw new RuntimeException("Failed to Convert Entity to String");
-        }
-
-        try {
-            tweet = toObjectFromJson(jsonstr, Tweet.class);
-        }
-        catch (IOException e) {
-            logger.error(e.getMessage(), e);
-            throw new RuntimeException("Failed to Convert JSON String to Tweet Object");
-        }
-       return tweet;
-    }
-    */
 }

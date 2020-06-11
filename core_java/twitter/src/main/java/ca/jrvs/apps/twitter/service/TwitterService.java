@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.ArrayList;
 import java.util.List;
 
+@org.springframework.stereotype.Service
 public class TwitterService implements Service {
     private CrdDao dao;
     private static int charMAX = 140;
@@ -44,6 +45,11 @@ public class TwitterService implements Service {
         if (id.length() > idMAX) {
             throw new IllegalArgumentException("id length out of range!");
         }
+         /*Optional Field Parser - To be implemented later if time permits
+        if (fields.length == 0) {
+            return (Tweet) dao.findById(id);
+        }
+        */
         return (Tweet) dao.findById(id);
     }
 

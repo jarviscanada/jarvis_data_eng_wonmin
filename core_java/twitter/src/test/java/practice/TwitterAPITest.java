@@ -1,4 +1,4 @@
-package ca.jrvs.apps.twitter.practice;
+package practice;
 
 import com.google.gdata.util.common.base.PercentEscaper;
 import jdk.nashorn.internal.parser.Token;

@@ -1,6 +1,7 @@
-package ca.jrvs.apps.twitter.dao.helper;
+package dao;
 
 import ca.jrvs.apps.twitter.dao.TwitterDao;
+import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
 import ca.jrvs.apps.twitter.model.Tweet;
 import org.junit.Rule;
 import org.junit.Test;
@@ -14,8 +15,7 @@ import org.mockito.junit.MockitoRule;
 import org.mockito.quality.Strictness;
 import org.springframework.test.context.TestPropertySource;
 
-import static ca.jrvs.apps.twitter.practice.JSONParser.toJson;
-import static ca.jrvs.apps.twitter.practice.JSONParser.toObjectFromJson;
+import static ca.jrvs.apps.twitter.util.JSONParser.toObjectFromJson;
 import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.isNotNull;
 import static org.mockito.Mockito.*;
@@ -24,7 +24,7 @@ import static org.mockito.Mockito.*;
 public class TwitterDaoUnitTest {
 
     @Mock
-    HttpHelper mockhelper;
+    HttpHelper mockHelper;
 
     @InjectMocks
     TwitterDao dao;
@@ -37,7 +37,7 @@ public class TwitterDaoUnitTest {
         float latitude = 12.1267F;
 
         //Test failure path
-        when(mockhelper.httpPost(isNotNull())).thenThrow(new RuntimeException("Mock"));
+        when(mockHelper.httpPost(isNotNull())).thenThrow(new RuntimeException("Mock"));
         try {
             Tweet tweet = new Tweet(text, longitude, latitude);
             dao.create(tweet);
@@ -60,21 +60,23 @@ public class TwitterDaoUnitTest {
                 +"    \"favorited\":false,\n"
                 +"    \"retweeted\":false\n"
                 +"}";
-        when(mockhelper.httpPost(isNotNull())).thenReturn(null);
+        when(mockHelper.httpPost(isNotNull())).thenReturn(null);
         TwitterDao spyDao = Mockito.spy(dao);
         Tweet expectedTweet = toObjectFromJson(tweetJsonStr, Tweet.class);
-        doReturn(expectedTweet).when(spyDao).create(any());
-        Tweet tweet = new Tweet(text, longitude, latitude);
+        doReturn(expectedTweet).when(spyDao).create(expectedTweet);
+        Tweet tweet = spyDao.create(new Tweet(text,latitude,longitude));
+
         assertNotNull(tweet);
         assertNotNull(tweet.getText());
     }
 
     @Test
     public void findById() throws Exception {
-        //Test fail Path
-        when(mockhelper.httpPost(isNotNull())).thenThrow(new RuntimeException("Mock"));
+
+        //Test failure Path
+        when(mockHelper.httpPost(isNotNull())).thenThrow(new RuntimeException("Mock failure"));
         try {
-            dao.findById("1270155265481064454");
+            dao.findById("1270727081501118465");
             fail();
         }
         catch (RuntimeException e) {
@@ -82,20 +84,24 @@ public class TwitterDaoUnitTest {
         }
 
         //Test working path
-        when(mockhelper.httpPost(isNotNull())).thenReturn(null);
+        when(mockHelper.httpPost(isNotNull())).thenReturn(null);
         TwitterDao spyDao = Mockito.spy(dao);
         String tweetJsonStr = "{\n"
-                +"    \"created_at\":\"Tue Jun 09 00:46:28 +0000 2020\",\n"
-                +"    \"id\":1270155265481064454,\n"
-                +"    \"id_str\":\"1270155265481064454\",\n"
-                +"    \"text\":\"Hello #Test - 1591663586895\",\n"
+                +"    \"created_at\":\"Wed Jun 10 14:38:39 +0000 2020\",\n"
+                +"    \"id\":1270727081501118465,\n"
+                +"    \"id_str\":\"1270727081501118465\",\n"
+                +"    \"text\":\"Hello #Test - 1591799917526\",\n"
                 +"    \"entities\":{\n"
                 +"       \"hashtags\": [{\n"
                 +"       \"text\":\"Test\",\n"
                 +"       \"indices\": [\n"
                 +"            6, 11\n"
                 +"      ]}]},\n"
-                +"    \"coordinates\":null,\n"
+                +"    \"coordinates\":{\n"
+                +"       \"type\":\"Point\",\n"
+                +"       \"coordinates\": [\n"
+                +"            -75.1251, 12.1267\n"
+                +"      ]}]},\n"
                 +"    \"retweet_count\":0,\n"
                 +"    \"favorite_count\":0,\n"
                 +"    \"favorited\":false,\n"
@@ -103,14 +109,16 @@ public class TwitterDaoUnitTest {
                 +"}";
         Tweet expectedTweet = toObjectFromJson(tweetJsonStr, Tweet.class);
         doReturn(expectedTweet).when(spyDao).findById(anyString());
+
         assertNotNull(expectedTweet);
         assertNotNull(expectedTweet.getText());
     }
 
     @Test
     public void deleteById() throws Exception {
-        //Test fail Path
-        when(mockhelper.httpPost(isNotNull())).thenThrow(new RuntimeException("Mock"));
+
+        //Test failure Path
+        when(mockHelper.httpPost(isNotNull())).thenThrow(new RuntimeException("Mock"));
         try {
             dao.deleteById("1270155265481064454");
             fail();
@@ -120,7 +128,7 @@ public class TwitterDaoUnitTest {
         }
 
         //Test working path
-        when(mockhelper.httpPost(isNotNull())).thenReturn(null);
+        when(mockHelper.httpPost(isNotNull())).thenReturn(null);
         TwitterDao spyDao = Mockito.spy(dao);
         String tweetJsonStr = "{\n"
                 +"    \"created_at\":\"Tue Jun 09 00:46:28 +0000 2020\",\n"
@@ -141,9 +149,8 @@ public class TwitterDaoUnitTest {
                 +"}";
         Tweet expectedTweet = toObjectFromJson(tweetJsonStr, Tweet.class);
         doReturn(expectedTweet).when(spyDao).deleteById(anyString());
+
         assertNotNull(expectedTweet);
         assertNotNull(expectedTweet.getText());
-
     }
-
 }
