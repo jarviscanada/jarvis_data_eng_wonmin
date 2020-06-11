@@ -52,7 +52,7 @@ java -jar #jarFileName.jar post|show|delete [options]
 ## Design
 ### UML Diagram
 <p align="center">
-    <img src="./assets/UML_Diagram.png" height="1%" width="50%">
+    <img src="./assets/UML_Diagram.png" height="5%" width="75%">
 </p>
 
 ### Components
