@@ -13,7 +13,7 @@ the use of JDBC drivers, data access design patterns and more.
  
 ## Design Patterns
 Data Access Object Design Pattern is used to separate the data persistence logic in a separate layer. 
-This way, the service remains completely in dark about how the low-level operations to access the database is done.
+This way, the ca.jrvs.apps.twitter.service remains completely in dark about how the low-level operations to access the database is done.
 In general, an object could be one row in the database table. 
 A Repo pattern focuses only one single table access per class and acts like a collection.
 In short the DAO pattern is an abstraction of data persistence, while the Repo pattern

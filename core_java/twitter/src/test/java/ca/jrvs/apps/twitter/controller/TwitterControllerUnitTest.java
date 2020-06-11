@@ -1,6 +1,5 @@
-package controller;
+package ca.jrvs.apps.twitter.controller;
 
-import ca.jrvs.apps.twitter.controller.TwitterController;
 import ca.jrvs.apps.twitter.model.Tweet;
 import ca.jrvs.apps.twitter.service.Service;
 import org.junit.Test;

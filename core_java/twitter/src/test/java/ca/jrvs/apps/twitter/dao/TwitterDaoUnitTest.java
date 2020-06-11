@@ -1,19 +1,13 @@
-package dao;
+package ca.jrvs.apps.twitter.dao;
 
-import ca.jrvs.apps.twitter.dao.TwitterDao;
 import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
 import ca.jrvs.apps.twitter.model.Tweet;
-import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.mockito.junit.MockitoRule;
-import org.mockito.quality.Strictness;
-import org.springframework.test.context.TestPropertySource;
 
 import static ca.jrvs.apps.twitter.util.JSONParser.toObjectFromJson;
 import static org.junit.Assert.*;
@@ -47,7 +41,7 @@ public class TwitterDaoUnitTest {
             assertTrue(true);
         }
 
-        //Test working path - Create a spy dao
+        //Test working path - Create a spy ca.jrvs.apps.twitter.dao
         String tweetJsonStr = "{\n"
                 +"    \"created_at\":\"Mon Feb 18 21:24:39 +0000 2019\",\n"
                 +"    \"id\":1270155265481064289,\n"

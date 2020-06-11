@@ -1,14 +1,12 @@
-package service;
+package ca.jrvs.apps.twitter.service;
 
 import ca.jrvs.apps.twitter.dao.TwitterDao;
 import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
 import ca.jrvs.apps.twitter.dao.helper.TwitterHttpHelper;
 import ca.jrvs.apps.twitter.model.Tweet;
-import ca.jrvs.apps.twitter.service.TwitterService;
 import org.junit.Before;
 import org.junit.Test;
-import javax.validation.constraints.PastOrPresent;
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.List;
 

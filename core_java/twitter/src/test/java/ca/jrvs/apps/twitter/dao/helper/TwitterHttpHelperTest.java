@@ -1,8 +1,6 @@
-package dao.helper;
+package ca.jrvs.apps.twitter.dao.helper;
 
 
-import ca.jrvs.apps.twitter.dao.helper.HttpHelper;
-import ca.jrvs.apps.twitter.dao.helper.TwitterHttpHelper;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.junit.*;
@@ -10,7 +8,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.net.URI;
-import static org.junit.Assert.*;
 
 public class TwitterHttpHelperTest {
     final Logger logger = LoggerFactory.getLogger(TwitterHttpHelper.class);

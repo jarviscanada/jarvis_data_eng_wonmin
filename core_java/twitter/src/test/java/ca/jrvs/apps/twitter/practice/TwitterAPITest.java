@@ -1,10 +1,8 @@
-package practice;
+package ca.jrvs.apps.twitter.practice;
 
 import com.google.gdata.util.common.base.PercentEscaper;
-import jdk.nashorn.internal.parser.Token;
 import oauth.signpost.OAuthConsumer;
 import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
-import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;

@@ -47,7 +47,7 @@ public class TwitterService implements Service {
         }
          /*Optional Field Parser - To be implemented later if time permits
         if (fields.length == 0) {
-            return (Tweet) dao.findById(id);
+            return (Tweet) ca.jrvs.apps.twitter.dao.findById(id);
         }
         */
         return (Tweet) dao.findById(id);
