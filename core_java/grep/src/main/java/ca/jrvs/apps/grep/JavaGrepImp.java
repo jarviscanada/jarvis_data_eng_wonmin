@@ -24,7 +24,7 @@ public class JavaGrepImp implements JavaGrep{
             javaGrepImp.process();
         }
         catch(Exception ex) {
-            javaGrepImp.logger.error(ex.getMessage(), ex);
+            logger.error("Invalid Usage!", ex);
         }
     }
 

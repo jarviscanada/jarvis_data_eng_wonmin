@@ -61,7 +61,7 @@ public class OrderDAO extends DataAccessObject<Order> {
             }
             order.setOrderLines(orderLines);
         }catch(SQLException e){
-            logger.error(e.getMessage(), e);
+            logger.error("Invalid SQL query!", e);
             throw new RuntimeException(e);
         }
         return order;

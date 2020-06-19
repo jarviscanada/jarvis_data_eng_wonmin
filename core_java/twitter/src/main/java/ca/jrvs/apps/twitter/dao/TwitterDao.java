@@ -52,7 +52,7 @@ public class TwitterDao implements CrdDao<Tweet, String> {
                 try {
                     System.out.println(EntityUtils.toString(httpResponse.getEntity()));
                 } catch (IOException e) {
-                    logger.error(e.getMessage(), e);
+                    logger.error("Invalid IO!", e);
                 }
                 throw new RuntimeException("Unexpected HTTP Response!");
             }
