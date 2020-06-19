@@ -25,8 +25,8 @@ public class TwitterController implements Controller {
         String text = args[1];
         String coord = args[2];
         String[] coordArray = coord.split(COORD_SEP);
-        float myLat = 0;
-        float myLong = 0;
+        float Lat = 0;
+        float Long = 0;
 
         if (coordArray.length != 2) {
             throw new IllegalArgumentException("Please specify a valid latitude:longitude");
@@ -36,13 +36,13 @@ public class TwitterController implements Controller {
         }
 
         try {
-            myLat = Float.parseFloat(coordArray[0]);
-            myLong = Float.parseFloat(coordArray[1]);
+            Lat = Float.parseFloat(coordArray[0]);
+            Long = Float.parseFloat(coordArray[1]);
         }
         catch (Exception e) {
             throw new IllegalArgumentException("Invalid location information!", e);
         }
-        Tweet tweet = new Tweet(text,myLat,myLong);
+        Tweet tweet = new Tweet(text,Lat, Long);
         return service.postTweet(tweet);
     }
 

@@ -1,9 +1,12 @@
 package ca.jrvs.apps.jdbc.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.sql.*;
 import java.util.List;
 
 public abstract class DataAccessObject <T extends DataTransferObject> {
+    final Logger logger = LoggerFactory.getLogger(DataAccessObject.class);
 
     protected final Connection connection;
     protected final static String LAST_VAL = "SELECT last_value FROM ";
@@ -30,7 +33,7 @@ public abstract class DataAccessObject <T extends DataTransferObject> {
             }
             return key;
         }catch (SQLException e ){
-            e.printStackTrace();
+            logger.error("Invalid SQL", e);
             throw new RuntimeException(e);
         }
     }

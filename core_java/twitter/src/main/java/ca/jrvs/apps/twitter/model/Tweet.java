@@ -63,7 +63,7 @@ public class Tweet {
         float[] myCoords = {longitude, latitude};
         coord.setCoordinates(myCoords);
         coord.setType("Point");
-        this.coordinates = coord;
+        coordinates = coord;
     }
 
     @JsonProperty("created_at")
