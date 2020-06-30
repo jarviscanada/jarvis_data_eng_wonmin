@@ -16,7 +16,7 @@ public class ResponseExceptionUtil {
         } else {
             logger.error("Internal error", ex);
             return new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,
-                    "Internal Error: Please contact admin")''
+                    "Internal Error: Please contact admin");
         }
     }
 }
