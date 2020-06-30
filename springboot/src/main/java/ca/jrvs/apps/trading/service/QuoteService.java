@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Transactional
 @Service
@@ -107,6 +108,19 @@ public class QuoteService {
         });
 
         return quoteDao.saveAll(quotes);
+    }
+
+    /**
+     * Helper Method to update a given quote with specified ID
+     *
+     * @param ticker quote ID
+     */
+    public Quote saveQuote(String ticker) {
+        Optional<IexQuote> iexQuoteOptional = marketDataDao.findById(ticker);
+        Quote quoteFromIex = buildQuoteFromIexQuote(iexQuoteOptional.get());
+
+        return quoteDao.save(quoteFromIex);
+
     }
 
     /**
