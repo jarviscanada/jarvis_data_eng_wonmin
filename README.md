@@ -1,6 +1,6 @@
 # Wonmin Jeong . Jarvis Consulting
 Detail-oriented graduate from the Electrical Engineering discipline with experience in project management. 
-As a Data Engineering trainee, I have familiarized myself with the core concepts of the subject and have gained valuable practice in using software 
+As a junior Data Engineering developer, I have familiarized myself with the core concepts of the subject and have gained valuable practice in using software 
 that is prevalent in the industry. Furthermore, soft skills like interpersonal communication and diverse collaboration have been proven through  various professional development experiences. 
 I am seeking to utilize the practical and analytical knowledge developed in personal projects and 
 academia to leverage a challenging career path in the field of data engineering.
@@ -8,9 +8,9 @@ academia to leverage a challenging career path in the field of data engineering.
 ## Skills
 **Proficient:** Java, Bash, SQL, Agile/Scrum, Git/GitFlow
 
-**Competent:** SpringBoot, JUnit Testing, Matlab
+**Competent:** SpringBoot, JUnit Testing, Matlab, Docker, Mockito, Algorithm & Data Structures
 
-**Familiar:** Spring Framework, SpringBoot, Python, C, Assembly
+**Familiar:** Spring Framework, REST API, Python, C, Assembly
 
 ## Development Project
 Project Source Code: [https://github.com/jarviscanada/jarvis_data_eng_Wonmin](https://github.com/jarviscanada/jarvis_data_eng_Wonmin)
@@ -27,7 +27,7 @@ Project Source Code: [https://github.com/jarviscanada/jarvis_data_eng_Wonmin](ht
 - **[Spark/Scala](./spark)** Not Started
 
 ## Professional Experiences
-**Software Developer, Jarvis, Toronto (2020-Present):** Utilizing Java as the primary development language, the experience has allowed me to delve into Java fundamentals and it's core applications. Multiple projects introduced concepts that assimilated Java with SQL and Bash, granting in-depth knowledge on software integration and testing. Furthermore, each project introduced critical development concepts like Git/GitFlow and Agile/Scrum.
+**Software Developer, Jarvis, Toronto (2020-Present):** Utilizing Java as the primary development language, the experience has allowed me to delve into Java fundamentals and it's core applications. Multiple projects introduced concepts that assimilated Java with SQL and Bash, granting in-depth knowledge of software integration and testing. Furthermore, each project introduced critical development concepts like Git/GitFlow and Agile/Scrum.
 
 **Freelance Translator, UpWork, Toronto (2016-2018):** Being contract-based in nature, the work consisted of strict deadlines and diverse clients which allowed thorough development of effective communication and quality assurance. Furthermore, the work verified my ability as a self-starter with networking and management capabilities.
 
@@ -36,10 +36,10 @@ Project Source Code: [https://github.com/jarviscanada/jarvis_data_eng_Wonmin](ht
 
 - **Hearing Aid Development:** Designed and developed a prototype hearing aid that selectively tunes different 
 audio sources utilizing EEG signals from the brain. My responsibilities within the team were feature selection using Matlab and
-application development using python and microcontrollers.
+application development using Python (PyAudio, PyWave) and microcontrollers.
 
 - **Digital Inclination Measurement System:** Developed and implemented a microcontroller embedded prototype to acquire the angular position by processing the raw data and 
-transmitting the output to a user-friendly GUI. Core application consisted of quantifying the analog signal, analog to digital conversion, and data processing.
+transmitting the output to a user-friendly GUI within Matlab. The core application consisted of quantifying the analog signal, analog to digital conversion, and data processing.
 
 ## Certificates & Awards & Activities
 - Executive Leader, Youth With A Mission (2017-2020): Executive leader of a campus club involving mission trips and volunteering activities
