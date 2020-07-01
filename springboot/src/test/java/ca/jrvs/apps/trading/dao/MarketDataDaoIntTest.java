@@ -3,6 +3,7 @@ package ca.jrvs.apps.trading.dao;
 import ca.jrvs.apps.trading.model.IexQuote;
 import ca.jrvs.apps.trading.model.config.MarketDataConfig;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,6 +31,7 @@ public class MarketDataDaoIntTest {
     @Test
     public void findIexQuotesByTickers() throws IOException {
         List<IexQuote> quoteList = dao.findAllById(Arrays.asList("AAPL", "FB"));
+
         assertEquals(2, quoteList.size());
         assertEquals("AAPL", quoteList.get(0).getSymbol());
         assertEquals("FB", quoteList.get(1).getSymbol());
@@ -37,8 +39,30 @@ public class MarketDataDaoIntTest {
 
     @Test
     public void findByTicker() {
-        String ticker = "AAPL";
-        IexQuote iexQuote = dao.findById(ticker).get();
-        assertEquals(ticker, iexQuote.getSymbol());
+        IexQuote iexQuote = dao.findById("AAPL").get();
+
+        assertEquals("AAPL", iexQuote.getSymbol());
     }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void failSave() {
+        IexQuote iexQuote = dao.findById("AAPL").get();
+        dao.save(iexQuote);
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void failExistsById() {
+        dao.existsById("AAPL");
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void failFindAll() {
+        dao.findAll();
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void failCount() {
+        dao.count();
+    }
+
 }

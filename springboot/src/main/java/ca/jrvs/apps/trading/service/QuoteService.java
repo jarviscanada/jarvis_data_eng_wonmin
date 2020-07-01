@@ -50,24 +50,15 @@ public class QuoteService {
      * @return saved quotes
      */
     public List<Quote> updateMarketData() {
-        List<Quote> quotes = quoteDao.findAll();
-
-        quotes.forEach(quote -> {
-            String ticker = quote.getTicker();
-            IexQuote iexQuote = marketDataDao.findById(ticker).get();
-            Quote newQuote = buildQuoteFromIexQuote(iexQuote);
-            quotes.add(quoteDao.save(newQuote));
-        });
-
-        return quotes;
-
-        /*
         List<String> tickers = new ArrayList<>();
+
         quoteDao.findAll().forEach(quote -> {
             tickers.add(quote.getTicker());
         });
+
         return saveQuotes(tickers);
-         */
+
+
     }
 
     /**
