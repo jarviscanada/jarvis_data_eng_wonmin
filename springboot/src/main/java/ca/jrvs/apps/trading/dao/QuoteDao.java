@@ -38,6 +38,7 @@ public class QuoteDao implements CrudRepository<Quote, String> {
 
     /**
      * Updates ticker if already exists, or inserts a new ticker
+     *
      * @param quote
      * @throws DataRetrievalFailureException for unexpected SQL result or SQL exception failure
      * @return retrieved quote model
@@ -57,6 +58,7 @@ public class QuoteDao implements CrudRepository<Quote, String> {
 
     /**
      * Helper method for adding a single ticker
+     *
      * @throws IncorrectResultSizeDataAccessException if the row size is too big
      * @param quote
      */
@@ -70,6 +72,7 @@ public class QuoteDao implements CrudRepository<Quote, String> {
 
     /**
      * Helper method for updating existing ticker
+     *
      * @param quote
      */
     private int updateOne(Quote quote) {
@@ -80,6 +83,7 @@ public class QuoteDao implements CrudRepository<Quote, String> {
 
     /**
      * Helper method that makes sql update values into objects
+     *
      * @param quote that is to be updated
      * @throws DataRetrievalFailureException if quote is not found
      * @return UPDATE_SQL values
@@ -97,6 +101,7 @@ public class QuoteDao implements CrudRepository<Quote, String> {
 
     /**
      * Update multiple tickers
+     *
      * @param quotes
      * @param <S>
      * @return
@@ -112,6 +117,7 @@ public class QuoteDao implements CrudRepository<Quote, String> {
 
     /**
      * Find a quote by ticker
+     *
      * @param ticker
      * @return quote or Optional.empty if not found
      */
@@ -133,12 +139,13 @@ public class QuoteDao implements CrudRepository<Quote, String> {
 
     /**
      * Return all quotes
+     *
      * @throws DataAccessException if failed to update
      * @return list containing all quotes
      */
     @Override
     public List<Quote> findAll() {
-        List<Quote> quotes = new ArrayList<>();
+        List<Quote> quotes;
         String selectSQL = "SELECT * FROM " + TABLE_NAME;
         quotes = jdbcTemplate.query(selectSQL, BeanPropertyRowMapper.newInstance(Quote.class));
 
@@ -159,8 +166,12 @@ public class QuoteDao implements CrudRepository<Quote, String> {
     @Override
     public long count() {
         String countSQL = "SELECT COUNT(*) FROM " + TABLE_NAME;
-        long count = jdbcTemplate.queryForObject(countSQL, Long.class);
-
+        long count = 0;
+        try {
+            count = jdbcTemplate.queryForObject(countSQL, Long.class);
+        } catch (NullPointerException e) {
+            logger.debug("Unexpected count operation", e);
+        }
         return count;
     }
 
