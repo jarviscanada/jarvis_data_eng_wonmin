@@ -147,7 +147,7 @@ public class TraderAccountService {
 
         Double updateAmount = account.getAmount() - fund;
         if (updateAmount < 0D) {
-            throw new IllegalArgumentException("Insufficient funds for withdrawl");
+            throw new IllegalArgumentException("Insufficient funds for withdrawal");
         }
 
         account.setAmount(updateAmount);

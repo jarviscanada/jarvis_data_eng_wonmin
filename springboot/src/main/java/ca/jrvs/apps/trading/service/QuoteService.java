@@ -57,8 +57,6 @@ public class QuoteService {
         });
 
         return saveQuotes(tickers);
-
-
     }
 
     /**

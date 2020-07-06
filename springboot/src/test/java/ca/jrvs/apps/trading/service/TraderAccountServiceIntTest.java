@@ -86,7 +86,7 @@ public class TraderAccountServiceIntTest {
         Account withdrawAcount = traderAccountService.withdraw(savedTrader.getId(), 200D);
         savedView.setAccount(withdrawAcount);
 
-        //traderAccountService.deleteTraderById(savedView.getAccount().getId());
+        traderAccountService.deleteTraderById(savedView.getAccount().getId());
     }
 
 }
