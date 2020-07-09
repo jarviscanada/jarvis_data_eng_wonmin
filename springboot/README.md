@@ -1,4 +1,4 @@
-Table of contents
+**Table of contents**
 * [Introduction](#Introduction)
 * [Quick Start](#Quick-Start)
 * [Architecture](#Architecture)
