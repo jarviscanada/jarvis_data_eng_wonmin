@@ -17,7 +17,6 @@ import java.util.Optional;
 @Transactional
 @Service
 public class QuoteService {
-    private static final Logger logger = LoggerFactory.getLogger(QuoteService.class);
 
     private QuoteDao quoteDao;
     private MarketDataDao marketDataDao;
@@ -90,12 +89,14 @@ public class QuoteService {
      */
     public List<Quote> saveQuotes(List<String> tickers) {
         List<Quote> quotes = new ArrayList<>();
-        List<IexQuote> iexQuotes = marketDataDao.findAllById(tickers);
-
-        iexQuotes.forEach(iexInd -> {
-            quotes.add(buildQuoteFromIexQuote(iexInd));
-        });
-
+        try {
+            List<IexQuote> iexQuotes = marketDataDao.findAllById(tickers);
+            iexQuotes.forEach(iexInd -> {
+                quotes.add(buildQuoteFromIexQuote(iexInd));
+            });
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Couldn't find ticker");
+        }
         return quoteDao.saveAll(quotes);
     }
 

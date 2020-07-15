@@ -1,8 +1,5 @@
 package ca.jrvs.apps.trading.model.config;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class MarketDataConfig {
     private String host;
     private String token;
