@@ -14,11 +14,12 @@ academia to leverage a challenging career path in the field of data engineering.
 
 ## Development Project
 Project Source Code: [https://github.com/jarviscanada/jarvis_data_eng_Wonmin](https://github.com/jarviscanada/jarvis_data_eng_Wonmin)
+
 - **[Cluster Monitor:](./linux_sql)** Implemented a Linux cluster monitoring agent that records the hardware specification of each host machine and monitors their memory usage in real-time. The project was primarily developed using bash scripts that are integrated with the PostgreSQL database. Using Docker for containerization, the end product is light-weight, versatile, and easy to use.
 
 - **[Core Java Apps:](./core_java)** Attained in-depth knowledge of Java by developing three separate applications. The first application, JavaGrep, utilizes the Stream API and Lambda expressions to replicate the grep command used in bash within Java. The second project initiated the use of JDBC and design patterns such as DAOs. The third application works with the Twitter API to allow simple CRUD operations. The project follows the MVC architecture and is tested with JUnit and Mockito.
 
-- **[SpringBoot App:](./springboot)** In Progress
+- **[SpringBoot App:](./springboot)** Developed a three-tier microservice application that simulates an online trading platform allowing transactions between traders, processing buy/sell orders and updating existing quotes present in the market. The project utilizes PostgreSQL to store stock market data into an RDBMS, separating the application from the data storage. Apache Tomcat is used to handle incoming HTTP requests from the client and communicates with the application to return the specified request. Custom DockerFiles configuration makes the application setup accessible to the end-user, and the containerization of the program makes it comprehensive and easy to use.
 
 - **[Cloud & DevOps](./cloud_devops)** Not Started
 
