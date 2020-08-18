@@ -15,7 +15,7 @@ potential business problems were presented with HiveQL.
 
 # Hadoop Cluster
 <p align="center">
-    <img src="./assets/Cluster_Architecture.png" height="5%" width="75%">
+    <img src="./Assets/Cluster_Architecture.png" height="5%" width="75%">
 </p>
 
 Following web UIs provided by the Google Cloud Platoform were used to evaluate Big Data tools:
@@ -37,7 +37,7 @@ With the Hive project, solutions to business problems are presented using Hive a
 Querying with HiveQL was extensively researched, and its efficiency was tested and optimized. In the end,
 the Zeppelin notebook consists of clean, readable solutions to each problem presented to the developer.
 <p align="center">
-    <img src="./assets/Zep_Notebook.png" height="5%" width="75%">
+    <img src="./Assets/Zep_Notebook.png" height="5%" width="75%">
 </p>
 
 # Improvements
