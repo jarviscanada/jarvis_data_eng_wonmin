@@ -65,14 +65,14 @@ The application pulls real-time stock market data and stores it to a RDBMS using
    2. Start the container
       ```bash
       docker run --name trading-app-dev \
-      -e "PSQL_URL=jdbc:postgresql://trading-psql-dev:5432/jrvstrading" \
+      -e "PSQL_URL=jdbc:postgresql://localhost:5432/" \
       -e "PSQL_USER=postgres" \
       -e "PSQL_PASSWORD=password" \
       -e "IEX_PUB_TOKEN=${IEX_PUB_TOKEN}" \
       --network trading-net \
-      -p 5000:5000 -t trading-app
+      -p 8080:8080 -t trading-app
       ```
-6. Test the application using SwaggerUI with the URI: `http://localhost:5000/swagger-ui.html#/`
+6. Test the application using SwaggerUI with the URI: `http://localhost:8080/swagger-ui.html#/`
    <p align="center">
       <img src="./assets/Swagger.png" height="5%" width="75%">
    </p>
