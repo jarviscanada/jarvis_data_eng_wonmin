@@ -13,13 +13,11 @@ import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 
 @SpringBootApplication(exclude = {JdbcTemplateAutoConfiguration.class,
-        DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+        DataSourceAutoConfiguration.class,
+        HibernateJpaAutoConfiguration.class})
 public class Application implements CommandLineRunner {
 
-    private Logger logger = LoggerFactory.getLogger(Application.class);
-
-    @Value("${app.init.dailyList}")
-    private String[] initDailyList;
+    private final Logger logger = LoggerFactory.getLogger(Application.class);
 
     @Autowired
     private QuoteService quoteService;
@@ -30,5 +28,7 @@ public class Application implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {}
+    public void run(String... args) throws Exception {
+
+    }
 }
