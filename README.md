@@ -8,9 +8,9 @@ academia to leverage a challenging career path in the field of data engineering.
 ## Skills
 **Proficient:** Java, Bash, SQL, Agile/Scrum, Git/GitFlow
 
-**Competent:** SpringBoot, JUnit Testing, Matlab, Docker, Mockito, Algorithm & Data Structures
+**Competent:** SpringBoot, JUnit Testing, Matlab, Docker, Mockito, Algorithm & Data Structures, Hadoop/Hive
 
-**Familiar:** Spring Framework, REST API, Python, C, Assembly
+**Familiar:** Spring Framework, REST API, Python, C, Assembly, Google Cloud Platform
 
 ## Development Project
 Project Source Code: [https://github.com/jarviscanada/jarvis_data_eng_Wonmin](https://github.com/jarviscanada/jarvis_data_eng_Wonmin)
@@ -21,11 +21,11 @@ Project Source Code: [https://github.com/jarviscanada/jarvis_data_eng_Wonmin](ht
 
 - **[SpringBoot App:](./springboot)** Developed a three-tier microservice application that simulates an online trading platform allowing transactions between traders, processing buy/sell orders and updating existing quotes present in the market. The project utilizes PostgreSQL to store stock market data into an RDBMS, separating the application from the data storage. Apache Tomcat is used to handle incoming HTTP requests from the client and communicates with the application to return the specified request. Custom DockerFiles configuration makes the application setup accessible to the end-user, and the containerization of the program makes it comprehensive and easy to use.
 
-- **[Cloud & DevOps](./cloud_devops)** Not Started
-
-- **[Hadoop](./hadoop)** Not Started
+- **[Hadoop](./hadoop)** The Hadoop project is implemented to process enormous amounts of data that will be streamed from separate data analytics. With the use of Apache Hadoop, the processing of Big Data becomes convenient and efficient. A Hadoop Cluster was first provisioned with Google Cloud Platform, and core Hadoop components such as HDFS, YARN and MapReduce were evaluated using GCPs web UIs. Then, with the use of Hive and Apache Zeppelin, solutions to potential business problems were presented with HiveQL.
 
 - **[Spark/Scala](./spark)** Not Started
+
+- **[Cloud & DevOps](./cloud_devops)** Not Started
 
 ## Professional Experiences
 **Software Developer, Jarvis, Toronto (2020-Present):** Utilizing Java as the primary development language, the experience has allowed me to delve into Java fundamentals and it's core applications. Multiple projects introduced concepts that assimilated Java with SQL and Bash, granting in-depth knowledge of software integration and testing. Furthermore, each project introduced critical development concepts like Git/GitFlow and Agile/Scrum.
