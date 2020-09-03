@@ -1,0 +1,108 @@
+# Preffered name (Characters only)
+name: "Wonmin Jeong"
+# Your github repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_wonmin
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: Detail-oriented graduate from the Electrical Engineering discipline with experience in project management.
+  As a junior Data Engineering developer, I have familiarized myself with the core concepts of the subject and have gained valuable practice in using software
+  that is prevalent in the industry. Furthermore, soft skills like interpersonal communication and diverse collaboration have been proven through  various professional development experiences.
+  I am seeking to utilize the practical and analytical knowledge developed in personal projects and
+  academia to leverage a challenging career path in the field of data engineering.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Linux/Bash
+    - SQL
+    - Agile/Scrum
+    - Git/GitFlow
+  # At least 5 skills
+  competent:
+    - Spring/SpringBoot
+    - JUnit Testing
+    - Mockito
+    - Docker
+    - Algorithm & Data Structures
+    - Matlab
+    - Hadoop/Hive
+    - Amazon Web Services
+  # At least 5 skills
+  familiar:
+    - Software Architecture
+    - Python
+    - C
+    - Assembly
+    - Google Cloud Platform
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programing langauge, libraries, algorithms, hardwards, tools, etc.).
+    description: Implemented a Linux cluster monitoring agent that records the hardware specification of each host machine and monitors their memory usage in real-time. The project was primarily developed using bash scripts that are integrated with the PostgreSQL database. Using Docker for containerization, the end product is light-weight, versatile, and easy to use.
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Grep App: Utilizes the Stream API and Lambda expressions to replicate the grep command used in bash within Java."
+      - "JDBC App: Initiated the use of JDBC and design patterns such as DAOs."
+      - "Twitter App:  Works with the Twitter API to allow simple CRUD operations. The project follows the MVC architecture and is tested with JUnit and Mockito"
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: Developed a three-tier microservice application that simulates an online trading platform allowing transactions between traders, processing buy/sell orders and updating existing quotes present in the market. The project utilizes PostgreSQL to store stock market data into an RDBMS, separating the application from the data storage. Apache Tomcat is used to handle incoming HTTP requests from the client and communicates with the application to return the specified request. Custom DockerFiles configuration makes the application setup accessible to the end-user, and the containerization of the program makes it comprehensive and easy to use.
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: The Hadoop project is implemented to process enormous amounts of data that will be streamed from separate data analytics. With the use of Apache Hadoop, the processing of Big Data becomes convenient and efficient. A Hadoop Cluster was first provisioned with Google Cloud Platform, and core Hadoop components such as HDFS, YARN and MapReduce were evaluated using GCPs web UIs. Then, with the use of Hive and Apache Zeppelin, solutions to potential business problems were presented with HiveQL.
+  - name: "Spark"
+    git_url: "/spark"
+    description: Not Started
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: Not Started
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Hearing Aid Development"
+    description: Designed and developed a prototype hearing aid that selectively tunes different audio sources utilizing EEG signals from the brain. My responsibilities within the team were feature selection using Matlab and application development using Python (PyAudio, PyWave) and microcontrollers.
+  - name: "Digital Inclination Measurement System"
+    description: Developed and implemented a microcontroller embedded prototype to acquire the angular position by processing the raw data and transmitting the output to a user-friendly GUI within Matlab. The core application consisted of quantifying the analog signal, analog to digital conversion, and data processing.
+
+#List of professional expereince
+#The job description allows hiring managers to understand your job and technologies you used(e.g. programing langauge, libraries, algorithms, hardwards, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional expereince rather than training.
+  - title: "Software Developer"
+    company: "Jarvis"
+    duration: "2020-Present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Utilizing Java as the primary development language, the experience has allowed me to delve into Java fundamentals and it's core applications. Multiple projects introduced concepts that assimilated Java with SQL and Bash, granting in-depth knowledge of software integration and testing. Furthermore, each project introduced critical development concepts like Git/GitFlow and Agile/Scrum.
+  - title: "Freelance Translator"
+    company: "UpWork"
+    duration: "2016-2018"
+    description: Being contract-based in nature, the work consisted of strict deadlines and diverse clients which allowed thorough development of effective communication and quality assurance. Furthermore, the work verified my ability as a self-starter with networking and management capabilities.
+
+#List of edcuation
+education: 
+  - school_name: "McMaster University"
+    duration: "2016-2020"
+    degree: "Bachelor of Engineering"
+    department: "Electrical Engineering"
+    # optional
+    awards_achievements:
+      - "GPA: 3.0/4.0"
+
+#Optional section
+others:
+  - title: "Awards"
+    bullets:
+    - "Entrance Scholarship (2016)"
+  - title: "Activities/Hobbies"
+    bullets:
+    - "Executive Leader, Youth With A Mission (2017-2020): Executive leader of a campus club involving mission trips and volunteering activities"
