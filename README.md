@@ -47,7 +47,6 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_wonmin](ht
 
 ## Education
 **McMaster University (2016-2020)**, Bachelor of Engineering, Electrical Engineering
-- GPA: 3.0/4.0
 
 
 ## Miscellaneous

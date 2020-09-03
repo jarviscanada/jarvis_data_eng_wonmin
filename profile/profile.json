@@ -1,9 +1,7 @@
 {
   "education": [
     {
-      "awards_achievements": [
-        "GPA: 3.0/4.0"
-      ],
+      "awards_achievements": null,
       "degree": "Bachelor of Engineering",
       "department": "Electrical Engineering",
       "duration": "2016-2020",
