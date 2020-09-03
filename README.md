@@ -27,9 +27,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_wonmin](ht
 
 **Hadoop** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_wonmin/tree/master/hadoop)]: The Hadoop project is implemented to process enormous amounts of data that will be streamed from separate data analytics. With the use of Apache Hadoop, the processing of Big Data becomes convenient and efficient. A Hadoop Cluster was first provisioned with Google Cloud Platform, and core Hadoop components such as HDFS, YARN and MapReduce were evaluated using GCPs web UIs. Then, with the use of Hive and Apache Zeppelin, solutions to potential business problems were presented with HiveQL.
 
-**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_wonmin/tree/master/spark)]: In Progress
+**Spark** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_wonmin/tree/master/spark)]: Not Started
 
-**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_wonmin/tree/master/cloud_devops)]: In Progress
+**Cloud/DevOps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_wonmin/tree/master/cloud_devops)]: Not Started
 
 
 ## Highlighted Projects
@@ -47,11 +47,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_wonmin](ht
 
 ## Education
 **McMaster University (2016-2020)**, Bachelor of Engineering, Electrical Engineering
-- Entrance Scholarship
 - GPA: 3.0/4.0
 
 
 ## Miscellaneous
-- AA
-- AA
-- AA
+- Entrance Scholarship (2016)
+- Executive Leader, Youth With A Mission (2017-2020): Executive leader of a campus club involving mission trips and volunteering activities
